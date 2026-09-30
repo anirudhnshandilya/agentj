@@ -1,22 +1,21 @@
 # Changelog
 
-## 0.1.0 - 2026-09-30
+All notable changes to AgentJ are documented here.
 
-First public release.
+## Unreleased
 
 ### Added
 
-- Java-native synchronous agent execution loop.
-- `@Tool` reflection and JSON-schema-like input descriptions.
-- Provider-neutral `Model` and `ToolProvider` interfaces.
-- OpenAI Responses API adapter.
-- MCP 2.0.1 tool bridge for STDIO and Streamable HTTP.
-- In-memory and JSON-file memory implementations.
-- Trace events and logging tracer.
-- Composite tool providers.
-- Starter CLI and basic end-to-end example.
-- Maven Wrapper and GitHub Actions CI.
+- `agentj-jev`: Java-native integration for TypeSafe AI System One / Jev.
+- Typed Jev `choice`, `score`, and `noul` question primitives.
+- Structured probabilities and confidence in Jev responses.
+- `examples/hybrid-agent`: Jev decision + deterministic Java workflow example.
+- README positioning around generative AI + decision AI + Java + MCP.
 
-### Notes
+### Changed
 
-The 0.1.0 API is early access. Streaming and asynchronous execution are intentionally outside the current synchronous core.
+- Root project description now reflects AgentJ's broader AI runtime direction.
+
+## 0.1.0
+
+Initial public release with Java tools, OpenAI integration, MCP support, memory, tracing, CLI, and the end-to-end MCP example.

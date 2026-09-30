@@ -6,15 +6,17 @@
   <version>0.1.0</version>
   <packaging>pom</packaging>
   <name>AgentJ</name>
-  <description>Small, Java-native runtime for production AI agents.</description>
+  <description>Java-native AI agent runtime for LLMs, Jev decisions, Java tools, and MCP.</description>
   <url>https://github.com/anirudhnshandilya/agentj</url>
   <modules>
     <module>agentj-core</module>
     <module>agentj-openai</module>
     <module>agentj-mcp</module>
+    <module>agentj-jev</module>
     <module>agentj-cli</module>
     <module>examples/basic</module>
     <module>examples/killer-mcp</module>
+    <module>examples/hybrid-agent</module>
   </modules>
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
