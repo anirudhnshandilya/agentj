@@ -27,5 +27,5 @@ jobs:
 
       - name: Run zero-key Jev example
         run: |
-          java -jar examples/hybrid-agent/target/agentj-example-hybrid-0.1.0.jar \
+          java -jar examples/hybrid-agent/target/agentj-example-hybrid-0.1.0-shaded.jar \
             "The payment integration failed for three days and the customer needs help today."
