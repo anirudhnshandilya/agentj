@@ -17,7 +17,7 @@ public final class AgentJCli implements Callable<Integer> {
     @CommandLine.Command(name="init", description="Create a starter AgentJ project in the current directory.")
     int init() throws Exception {
         Path root = Path.of("agentj-project"); Files.createDirectories(root.resolve("src/main/java"));
-        Files.writeString(root.resolve("README.md"), "# AgentJ project\\n\\nSee https://github.com/agentj-dev/agentj for the runtime.\\n");
+        Files.writeString(root.resolve("README.md"), "# AgentJ project\\n\\nSee https://github.com/anirudhnshandilya/agentj for the runtime.\\n");
         System.out.println("Created " + root.toAbsolutePath());
         return 0;
     }

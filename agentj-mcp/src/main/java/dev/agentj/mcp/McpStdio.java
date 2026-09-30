@@ -11,18 +11,11 @@ import java.util.List;
 /** Small factory for connecting AgentJ to a local MCP process over STDIO. */
 public final class McpStdio {
     private McpStdio() {}
-
     public static McpToolProvider connect(String command, List<String> args) {
-        ServerParameters params = ServerParameters.builder(command)
-                .args(args)
-                .build();
-
-        StdioClientTransport transport =
-                new StdioClientTransport(params, McpJsonDefaults.getMapper());
-
+        ServerParameters params = ServerParameters.builder(command).args(args).build();
+        StdioClientTransport transport = new StdioClientTransport(params, McpJsonDefaults.getMapper());
         McpSyncClient client = McpClient.sync(transport).build();
         client.initialize();
-
         return new McpToolProvider(client);
     }
 }

@@ -7,19 +7,20 @@
   <packaging>pom</packaging>
   <name>AgentJ</name>
   <description>Small, Java-native runtime for production AI agents.</description>
-  <url>https://github.com/agentj-dev/agentj</url>
+  <url>https://github.com/anirudhnshandilya/agentj</url>
   <modules>
     <module>agentj-core</module>
     <module>agentj-openai</module>
     <module>agentj-mcp</module>
     <module>agentj-cli</module>
     <module>examples/basic</module>
+    <module>examples/killer-mcp</module>
   </modules>
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.parameters>true</maven.compiler.parameters>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.20.0</jackson.version>
+    <jackson.version>2.21.0</jackson.version>
     <junit.version>6.0.0</junit.version>
     <picocli.version>4.7.7</picocli.version>
     <mcp.version>2.0.1</mcp.version>

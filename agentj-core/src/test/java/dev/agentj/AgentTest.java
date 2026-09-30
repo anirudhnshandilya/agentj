@@ -18,6 +18,15 @@ class AgentTest {
         assertEquals(5, registry.invoke("add", Map.of("a",2,"b",3)));
     }
 
+    @Test void convertsGenericToolArguments() throws Exception {
+        class GenericTools {
+            @Tool(description="Echo a list of strings")
+            public String join(List<String> values) { return String.join(",", values); }
+        }
+        ToolRegistry registry = new ToolRegistry(new com.fasterxml.jackson.databind.ObjectMapper()).register(new GenericTools());
+        assertEquals("a,b", registry.invoke("join", Map.of("values", List.of("a", "b"))));
+    }
+
     @Test void agentLoopsThroughToolCall() throws Exception {
         List<ModelRequest> requests = new ArrayList<>();
         Model model = request -> {

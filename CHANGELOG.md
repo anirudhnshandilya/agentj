@@ -1,12 +1,22 @@
 # Changelog
 
-## 0.1.0
+## 0.1.0 - 2026-09-30
 
-- Initial Java-native agent runtime.
-- `@Tool` reflection and JSON schema generation.
-- Provider-neutral agent loop.
+First public release.
+
+### Added
+
+- Java-native synchronous agent execution loop.
+- `@Tool` reflection and JSON-schema-like input descriptions.
+- Provider-neutral `Model` and `ToolProvider` interfaces.
 - OpenAI Responses API adapter.
 - MCP 2.0.1 tool bridge for STDIO and Streamable HTTP.
-- In-memory and JSON-file memory.
+- In-memory and JSON-file memory implementations.
 - Trace events and logging tracer.
-- Starter CLI and example.
+- Composite tool providers.
+- Starter CLI and basic end-to-end example.
+- Maven Wrapper and GitHub Actions CI.
+
+### Notes
+
+The 0.1.0 API is early access. Streaming and asynchronous execution are intentionally outside the current synchronous core.

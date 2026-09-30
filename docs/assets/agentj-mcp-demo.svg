@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">AgentJ MCP agent terminal demo</title>
+  <desc id="desc">A terminal-style visualization of AgentJ combining local Java tools with MCP tools.</desc>
+  <rect width="1400" height="760" rx="28" fill="#0d1117"/>
+  <rect x="0" y="0" width="1400" height="62" rx="28" fill="#161b22"/>
+  <circle cx="34" cy="31" r="8" fill="#ff5f56"/><circle cx="60" cy="31" r="8" fill="#ffbd2e"/><circle cx="86" cy="31" r="8" fill="#27c93f"/>
+  <text x="120" y="38" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="20">agentj-mcp-demo</text>
+  <text x="70" y="112" fill="#58a6ff" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="26">$ java -jar agentj-example-killer-mcp-0.1.0.jar</text>
+  <text x="70" y="156" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="22">AgentJ MCP launch demo</text>
+  <text x="70" y="188" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18">One agent loop. Java tools + MCP tools.</text>
+  <rect x="70" y="225" width="1260" height="190" rx="16" fill="#11161d" stroke="#30363d"/>
+  <text x="100" y="265" fill="#79c0ff" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18">DISCOVERED TOOLS</text>
+  <text x="100" y="307" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19">• calculateQuote</text>
+  <text x="420" y="307" fill="#7ee787" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">local Java @Tool</text>
+  <text x="100" y="348" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19">• catalog_search</text>
+  <text x="420" y="348" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">MCP / STDIO</text>
+  <text x="100" y="389" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19">• inventory_check</text>
+  <text x="420" y="389" fill="#d2a8ff" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">MCP / STDIO</text>
+  <path d="M700 440 L700 485" stroke="#58a6ff" stroke-width="4"/>
+  <polygon points="700,500 690,482 710,482" fill="#58a6ff"/>
+  <text x="70" y="550" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="18">MODEL → TOOL CALLS → RESULTS → MODEL</text>
+  <text x="70" y="604" fill="#f0f6fc" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="22">Java Starter Kit  ·  3 × £49.00  ·  17 in stock</text>
+  <text x="70" y="646" fill="#7ee787" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="22">VAT-inclusive total: £176.40</text>
+  <text x="70" y="704" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="16">AgentJ 0.1.0 · Java 21+ · MCP-ready</text>
+</svg>

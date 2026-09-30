@@ -39,7 +39,11 @@ public final class ToolRegistry implements ToolProvider {
             Object raw = arguments.containsKey(n) ? arguments.get(n) : arguments.get("input");
             args[i] = mapper.convertValue(raw, mapper.constructType(p.getParameterizedType()));
         }
-        try { return t.method().invoke(t.instance(), args); }
+        try {
+            Method method = t.method();
+            if (!method.canAccess(t.instance())) method.setAccessible(true);
+            return method.invoke(t.instance(), args);
+        }
         catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof Exception ex) throw ex;
