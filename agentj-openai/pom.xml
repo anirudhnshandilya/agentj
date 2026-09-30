@@ -1,0 +1,5 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion>
+  <parent><groupId>dev.agentj</groupId><artifactId>agentj-parent</artifactId><version>0.1.0</version></parent>
+  <artifactId>agentj-openai</artifactId><name>AgentJ OpenAI</name>
+  <dependencies><dependency><groupId>dev.agentj</groupId><artifactId>agentj-core</artifactId><version>${project.version}</version></dependency></dependencies>
+</project>
