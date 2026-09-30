@@ -23,7 +23,7 @@ jobs:
           cache: maven
 
       - name: Run tests and package every module
-        run: ./mvnw -B verify
+        run: mvn -B verify
 
       - name: Run zero-key Jev example
         run: |
