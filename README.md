@@ -82,7 +82,34 @@ See [`agentj-jev`](agentj-jev) and [`examples/hybrid-agent`](examples/hybrid-age
 
 **No API key is required to try the hybrid example.** It defaults to a deterministic local decision provider so the architecture can be explored offline. Set `AGENTJ_JEV_MODE=remote` and `TYPESAFE_API_KEY` only when you want real hosted Jev inference.
 
-## The 60-second demo
+## Zero-key demo: decisions inside Java
+
+The fastest way to understand the project is the hybrid decision example. It needs **no API key, no account, and no network access** by default.
+
+```bash
+./mvnw -pl examples/hybrid-agent -am package
+java -jar examples/hybrid-agent/target/agentj-example-hybrid-0.1.0.jar \
+  "The payment integration failed for three days and the customer needs help today."
+```
+
+You should see typed decisions followed by ordinary Java control flow:
+
+```text
+AgentJ + Jev
+============
+Provider:   local-mock
+Team:       billing ...
+Urgent:     true ...
+Severity:   ...
+
+Java decision: ESCALATE
+```
+
+The local provider is deliberately labeled **deterministic demo logic, not Jev inference**. To use real Jev, set `AGENTJ_JEV_MODE=remote` and `TYPESAFE_API_KEY`.
+
+See [`examples/hybrid-agent`](examples/hybrid-agent) for the complete source.
+
+## The 60-second MCP demo
 
 The repository includes a self-contained end-to-end MCP demo. One shaded JAR contains the AgentJ client **and** a tiny MCP server. The client launches the server over STDIO, discovers its tools, combines them with a normal Java `@Tool`, and lets the model decide what to call.
 
@@ -170,14 +197,14 @@ try (var mcp = McpStdio.connect("my-mcp-server", List.of("--stdio"))) {
 
 The result is deliberately boring at the API level—and that is the feature: **Java methods and MCP capabilities become one tool surface.**
 
-## What is included in 0.1.0
+## What is in the current tree
 
 - **Java 21+** — records, interfaces, and ordinary Java types.
 - **`@Tool` reflection** — register methods on your own objects as model-callable tools.
 - **Generated tool schemas** — describe Java method parameters to the model.
 - **Provider-neutral `Model` interface** — keep the core independent of a model vendor.
 - **OpenAI Responses adapter** — small HTTP-based integration in `agentj-openai`.
-- **Jev decision adapter** — typed `choice`, `score`, and `noul` decisions in `agentj-jev`.
+- **Jev decision adapter** — typed `choice`, `score`, and `noul` decisions in `agentj-jev`, with a zero-key local provider for demos/tests.
 - **MCP bridge** — consume tools from MCP servers over STDIO and Streamable HTTP.
 - **Memory abstraction** — in-memory and JSON-file implementations.
 - **Tracing abstraction** — no-op and logging implementations.
@@ -264,7 +291,8 @@ agentj-core
    │      └────────── Tracer
    │
    ├── agentj-openai
-   └── agentj-mcp
+   ├── agentj-mcp
+   └── agentj-jev
 ```
 
 More detail: [`ARCHITECTURE.md`](ARCHITECTURE.md).
@@ -272,11 +300,13 @@ More detail: [`ARCHITECTURE.md`](ARCHITECTURE.md).
 ## Modules
 
 ```text
-agentj-core       → runtime interfaces, agent loop, tools, memory, tracing
-agentj-openai     → OpenAI Responses API adapter
-agentj-mcp        → MCP tool provider
-agentj-cli        → command-line utilities
-examples/basic    → minimal local-tool example
+agentj-core         → runtime interfaces, agent loop, tools, memory, tracing
+agentj-openai       → OpenAI Responses API adapter
+agentj-mcp          → MCP tool provider
+agentj-jev          → Jev / System One decision adapter
+agentj-cli          → command-line utilities
+examples/basic      → minimal local-tool example
+examples/hybrid-agent → typed decisions + deterministic Java workflow
 examples/killer-mcp → launch demo: Java tools + MCP + model
 ```
 
@@ -290,7 +320,7 @@ See [`SECURITY.md`](SECURITY.md).
 
 ## Project status
 
-**0.1.0 — early access.**
+**0.1.0 — early access.** The Jev integration and hybrid example are currently part of the unreleased development tree; they are not presented as part of the published 0.1.0 release.
 
 The public API is intentionally small and may evolve. The project is useful today for experimentation, internal applications, prototypes, and contributors interested in shaping a lightweight Java agent runtime.
 
@@ -326,6 +356,7 @@ AgentJ is released under the [MIT License](LICENSE).
 
 ## Links
 
+- [Zero-key hybrid decision demo](examples/hybrid-agent)
 - [Killer MCP demo](examples/killer-mcp)
 - [Terminal demo guide](docs/DEMO.md)
 - [Architecture](ARCHITECTURE.md)
