@@ -6,6 +6,7 @@
 </p>
 
 <p align="center">
+  <a href="https://m8ven.ai/mcp/anirudhnshandilya/agentj?s=readme"><img src="https://m8ven.ai/badge/mcp/anirudhnshandilya/agentj" alt="M8ven Score"></a>
   <a href="https://github.com/anirudhnshandilya/agentj/actions/workflows/ci.yml"><img src="https://github.com/anirudhnshandilya/agentj/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/Java-21%2B-007396" alt="Java 21+">
   <img src="https://img.shields.io/badge/MCP-2.0.1-7c3aed" alt="MCP 2.0.1">
